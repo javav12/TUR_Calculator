@@ -54,7 +54,9 @@ def submit_form():
     email = request.form['email']
     address = request.form['address']
     date = request.form['date']
-
+    alinfor = str(name)+" "+ str(email)+" "+ str(address)+" "+ str(date)
+    with open('form.txt', 'a',) as f:
+        f.write(alinfor + '\n')
     # Verilerinizi kaydedebilir veya e-posta ile gönderebilirsiniz
     return render_template('form_result.html', 
                            # Değişkenleri buraya yerleştirin
